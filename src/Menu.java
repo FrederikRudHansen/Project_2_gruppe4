@@ -1,10 +1,12 @@
 import java.util.Scanner;
-
-public class Menu {
+public class Menu  {
 
     static Scanner tastaturMenu = new Scanner(System.in);
-    public static void menu() {
+    static Medlem medlem = new Medlem();
+    static boolean run = true;
 
+    public static void menu() {
+while (run){
         System.out.println("Velkommen til Delfin Svømmehallen\n");
         System.out.println("1. Betaling");
         System.out.println("2. Medlemmer");
@@ -13,6 +15,10 @@ public class Menu {
         System.out.print("indtast tal:");
 
         int hovedeMenu = tastaturMenu.nextInt();
+        int hovedeMenu1;
+        String bitchTastatur;
+
+
 
         switch (hovedeMenu) {
             case 1 -> {
@@ -33,14 +39,16 @@ public class Menu {
                 System.out.println("2. Opret medlem");
                 System.out.println("3. Slet medlem\n");
                 System.out.print("indtast tal:");
-                hovedeMenu = tastaturMenu.nextInt();
-
-                switch(hovedeMenu){
+                hovedeMenu1 = tastaturMenu.nextInt();
+                switch (hovedeMenu1){
                     case 1:
-                        System.out.println("Medlem 1: " );
-                    case 2: //opret medlem metode//
-                    case 3: //Slet medlem metode//
-                        hovedeMenu = tastaturMenu.nextInt();
+                        System.out.println(Medlem.medlemmer);
+                        bitchTastatur = tastaturMenu.nextLine();
+                        break;
+                    case 2:
+                        System.out.println("Opret medlem");
+                        medlem.opretMedlem();
+                        break;
                 }
             }
             case 3 -> {
@@ -59,6 +67,10 @@ public class Menu {
                     case 3:
                         //Slet svømmer metdoe//
                 }
+            }
+            case 4 -> {
+                run=false;
+            }
             }
         }
 
