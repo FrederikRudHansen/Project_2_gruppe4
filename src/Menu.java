@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Menu {
+
     static Scanner tastaturMenu = new Scanner(System.in);
     public static void menu() {
 
