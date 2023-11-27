@@ -10,10 +10,9 @@ while (run){
         System.out.println("Velkommen til Delfin Svømmehallen\n");
         System.out.println("1. Betaling");
         System.out.println("2. Medlemmer");
-        System.out.println("3. Svømmer\n");
-
+        System.out.println("3. Svømmer");
+        System.out.println("4. Afslut\n");
         System.out.print("indtast tal:");
-
         int hovedeMenu = tastaturMenu.nextInt();
         int hovedeMenu1;
         String bitchTastatur;
@@ -59,12 +58,13 @@ while (run){
                 System.out.print("indtast tal:");
                 hovedeMenu = tastaturMenu.nextInt();
                 switch (hovedeMenu){
-
                     case 1:
-                        //Top 5 Svømmere metode//
+                        //Se oversigt over alle//
                     case 2:
-                        //Opret svømmer metode//
+                        //Top 5 Svømmere metode//
                     case 3:
+                        //Opret svømmer metode//
+                    case 4:
                         //Slet svømmer metdoe//
                 }
             }
@@ -73,10 +73,6 @@ while (run){
             }
             }
         }
-
-
     }
 }
-class MenuExc extends Exception{
-
-}
+class MenuExc extends Exception{}
