@@ -12,7 +12,7 @@ while (run){
         System.out.println("2. Medlemmer");
         System.out.println("3. Svømmer");
         System.out.println("4. Afslut\n");
-        System.out.print("indtast tal:");
+        System.out.print("indtast tal: ");
         int hovedeMenu = tastaturMenu.nextInt();
         int hovedeMenu1;
         String bitchTastatur;
@@ -42,6 +42,7 @@ while (run){
                 switch (hovedeMenu1){
                     case 1:
                         System.out.println(Medlem.medlemmer);
+                        System.out.println(Medlem.svømmere);
                         bitchTastatur = tastaturMenu.nextLine();
                         break;
                     case 2:
