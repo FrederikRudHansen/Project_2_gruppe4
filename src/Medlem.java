@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Medlem {
     public static ArrayList<Medlem> medlemmer;
-
+    public static boolean fastmedlemoprettet = false;
     static Scanner tast = new Scanner(System.in);
     private static int nextMedlemID = 100;
     String navn;
@@ -31,6 +31,22 @@ public class Medlem {
         }
     }
 
+    public void fastmedlem() {
+        if (fastmedlemoprettet == false) {
+            Medlem nyMedlem1 = new Medlem("Goku", 30, "konkurrencesvømmer", 12345678, "Mand");
+            Medlem nyMedlem2 = new Medlem("Vegeta", 36, "konkurrencesvømmer", 10010001, "Mand");
+            Medlem nyMedlem3 = new Medlem("Piccolo", 55, "konkurrencesvømmer", 66666666, "Mand");
+            Medlem nyMedlem4 = new Medlem("Krillin", 29, "konkurrencesvømmer", 69696969, "Mand");
+            Medlem nyMedlem5 = new Medlem("Tenshinhan", 31, "konkurrencesvømmer", 21212121, "Mand");
+            medlemmer.add(nyMedlem1);
+            medlemmer.add(nyMedlem2);
+            medlemmer.add(nyMedlem3);
+            medlemmer.add(nyMedlem4);
+            medlemmer.add(nyMedlem5);
+            fastmedlemoprettet = true;
+        }
+    }
+
     public void opretMedlem() {
         System.out.println("\n Medlemmer ⇩");
         System.out.println("Indtast navn");
@@ -47,6 +63,7 @@ public class Medlem {
             int tlf = tast.nextInt();
             Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn);
             medlemmer.add(nyMedlem);
+
             Menu.menu();
         } else {
             System.out.println("not a køn");
@@ -55,20 +72,5 @@ public class Medlem {
     @Override
     public String toString() {
         return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nAktivitetsform: "+aktivitetsform+"\n\nTelefon: +45" +tlf+ "\n\nRestance: " +restance+"\n_____________________\n";
-    }
-}
-
-class Svømmer extends Medlem {
-    int nextMedlemID = 200;
-    double tid;
-    LocalDate dato;
-    String discipliner;
-
-    Svømmer(String navn, int alder, String af, int tlf, String køn, double tid, LocalDate dato, String dp) {
-        super(navn, alder, af, tlf, køn);
-        this.tid = tid;
-        this.dato = dato;
-        discipliner = dp;
-        this.medlemID = nextMedlemID++;
     }
 }
