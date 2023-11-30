@@ -6,6 +6,7 @@ public class Menu  {
     static boolean run = true;
 
     public static void menu() {
+        medlem.fastmedlem();
 while (run){
         System.out.println("Velkommen til Delfin Svømmehallen\n");
         System.out.println("1. Betaling");
@@ -42,7 +43,6 @@ while (run){
                 switch (hovedeMenu1){
                     case 1:
                         System.out.println(Medlem.medlemmer);
-                        bitchTastatur = tastaturMenu.nextLine();
                         break;
                     case 2:
                         System.out.println("Opret medlem");
