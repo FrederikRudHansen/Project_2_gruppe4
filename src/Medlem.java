@@ -86,6 +86,32 @@ public class Medlem {
             System.out.println("not a køn");
         }
     }
+
+    public void sletMedlem(int medlemsID) {  // sletmedlemID
+        for (Medlem medlem : medlemmer) {
+            if (medlem.medlemID == medlemsID) {
+                medlemmer.remove(medlem);
+                System.out.println("Medlem med ID " + medlemsID + " er blevet slettet.");
+                return; // Når medlemmet er fundet og slettet, afsluttes metoden.
+            }
+        }
+        System.out.println("Medlem med ID " + medlemsID + " blev ikke fundet.");
+    }
+
+    public void sletDeltagelse(int konkurrenceID, int medlemsID) {
+        for (Medlem medlem : medlemmer) {
+            if (medlem.medlemID == medlemsID) {
+                medlem.sletDeltagelse(konkurrenceID);
+                return; // Når deltagelsen er fjernet, afsluttes metoden.
+            }
+        }
+        System.out.println("Medlem med ID " + medlemsID + " blev ikke fundet.");
+    }
+
+    public void sletDeltagelse(int konkurrenceID) {
+        // Implementer logikken til at fjerne deltagelsen i konkurrencen baseret på konkurrenceID
+    }
+
     @Override
     public String toString() {
         return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nAktivitetsform: "+aktivitetsform+"\n\nTelefon: +45" +tlf+ "\n\nRestance: " +restance+"\n_____________________\n";

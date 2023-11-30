@@ -41,6 +41,7 @@ while (run){
                 System.out.println("\n1. Se medlemmer");
                 System.out.println("2. Opret medlem");
                 System.out.println("3. Slet medlem\n");
+                System.out.println("4. Slet svømmeres deltagelse i en konkurrence");
                 System.out.print("indtast tal:");
                 hovedeMenu1 = tastaturMenu.nextInt();
                 switch (hovedeMenu1){
@@ -51,8 +52,23 @@ while (run){
                         System.out.println("Opret medlem");
                         medlem.opretMedlem();
                         break;
+                    case 3:
+                        System.out.println("Slet medlem");
+                        System.out.println("Indtast medlems ID for at slette:");
+                        int sletMedlemsid = tastaturMenu.nextInt();
+                        medlem.sletMedlem(sletMedlemsid);
+                        break;
+                    case 4:
+                        System.out.println("Slet svømmerens deltagelse i konkurrence");
+                        System.out.println("Indtast konkurrence-ID:");
+                        int konkurrenceIDAtSlette = tastaturMenu.nextInt();
+                        System.out.println("Indtast medlems-ID for svømmeren:");
+                        int medlemsIDAtSletteDeltagelse = tastaturMenu.nextInt();
+                        medlem.sletDeltagelse(konkurrenceIDAtSlette, medlemsIDAtSletteDeltagelse);
+                        break;
                 }
             }
+
             case 3 -> {
                 System.out.println("\n1. Se oversigt over alle svømmere");
                 System.out.println("2. Top 5 svømmere");
