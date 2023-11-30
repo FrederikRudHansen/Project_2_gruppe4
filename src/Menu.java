@@ -48,6 +48,12 @@ while (run){
                         System.out.println("Opret medlem");
                         medlem.opretMedlem();
                         break;
+                    case 3:
+                        System.out.println("Slet medlem");
+                        System.out.println("Indtast medlems ID for at slette:");
+                        int medlemsIDAtSlette = tastaturMenu.nextInt();
+                        medlem.sletMedlem(medlemsIDAtSlette);
+                        break;
                 }
             }
             case 3 -> {
