@@ -21,7 +21,7 @@ public class Medlem {
         this.medlemID = nextMedlemID++;
         this.alder = alder;
         aktivitetsform = af;
-        this.restance=restance;
+        this.restance = restance;
         this.tlf = tlf;
         this.køn = køn;
 
@@ -32,21 +32,25 @@ public class Medlem {
             medlemmer = new ArrayList<>();
         }
     }
-  
-    public void visRestance(){
-        for (Medlem medlem : medlemmer){
-            System.out.println("Navn: "+ medlem.navn);
-            System.out.println("Restance "+ medlem.restance);
-            System.out.println("Id "+ medlem.medlemID+"\n\n");
+
+
+
+
+    public void visRestance() {
+        for (Medlem medlem : medlemmer) {
+            System.out.println("Navn: " + medlem.navn);
+            System.out.println("Restance " + medlem.restance);
+            System.out.println("Id " + medlem.medlemID + "\n\n");
         }
-}
+    }
+
     public void fastmedlem() {
         if (fastmedlemoprettet == false) {
-            Medlem nyMedlem1 = new Medlem("Goku", 30, "konkurrencesvømmer", 12345678, "Mand");
-            Medlem nyMedlem2 = new Medlem("Vegeta", 36, "konkurrencesvømmer", 10010001, "Mand");
-            Medlem nyMedlem3 = new Medlem("Piccolo", 55, "konkurrencesvømmer", 66666666, "Mand");
-            Medlem nyMedlem4 = new Medlem("Krillin", 29, "konkurrencesvømmer", 69696969, "Mand");
-            Medlem nyMedlem5 = new Medlem("Tenshinhan", 31, "konkurrencesvømmer", 21212121, "Mand");
+            Medlem nyMedlem1 = new Medlem("Goku", 30, "konkurrencesvømmer", 12345678, "Mand",0);
+            Medlem nyMedlem2 = new Medlem("Vegeta", 36, "konkurrencesvømmer", 10010001, "Mand",0);
+            Medlem nyMedlem3 = new Medlem("Piccolo", 55, "konkurrencesvømmer", 66666666, "Mand",0);
+            Medlem nyMedlem4 = new Medlem("Krillin", 29, "konkurrencesvømmer", 69696969, "Mand",0);
+            Medlem nyMedlem5 = new Medlem("Tenshinhan", 31, "konkurrencesvømmer", 21212121, "Mand",0);
             medlemmer.add(nyMedlem1);
             medlemmer.add(nyMedlem2);
             medlemmer.add(nyMedlem3);
@@ -55,6 +59,7 @@ public class Medlem {
             fastmedlemoprettet = true;
         }
     }
+
     public void opretMedlem() {
         System.out.println("\n Medlemmer ⇩");
         System.out.println("Indtast navn");
@@ -68,10 +73,10 @@ public class Medlem {
             System.out.println("Indtast alder");
             int alder = Integer.parseInt(tast.nextLine());
             int restance;
-            if (alder < 17){
-                restance=+1000;
-            }else{
-                restance=+1600;
+            if (alder < 17) {
+                restance = +1000;
+            } else {
+                restance = +1600;
             }
             System.out.println("Indtast ønsket aktivitet");
 
@@ -114,6 +119,7 @@ public class Medlem {
 
     @Override
     public String toString() {
-        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nAktivitetsform: "+aktivitetsform+"\n\nTelefon: +45" +tlf+ "\n\nRestance: " +restance+"\n_____________________\n";
+        return "Medlem: " + navn + ", " + køn + ", " + alder + "\n\nMedlems ID: " + medlemID + "\n\nAktivitetsform: " + aktivitetsform + "\n\nTelefon: +45" + tlf + "\n\nRestance: " + restance + "\n_____________________\n";
     }
+}
   

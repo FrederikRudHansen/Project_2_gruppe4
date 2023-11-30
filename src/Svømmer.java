@@ -14,8 +14,8 @@ public class Svømmer extends Medlem {
     public LocalDate dato;
     String stævne;
 
-        Svømmer(String navn, int alder, String af, int tlf, String køn, double tid, LocalDate dato, String st) {
-            super(navn, alder, af, tlf, køn);
+        Svømmer(String navn, int alder, String af, int tlf, String køn, double tid, LocalDate dato, String st,int restance) {
+            super(navn, alder, af, tlf, køn,restance);
             this.tid = tid;
             this.dato = dato;
             stævne = st;
@@ -35,11 +35,11 @@ public class Svømmer extends Medlem {
 
     public void fastsvømmer() {
         if (fastsvømmerprettet == false) {
-            Svømmer NySvømmer1 = new Svømmer("Goku", 30, "konkurrencesvømmer", 12345678, "Mand", 4.10, LocalDate.of(2023,11,30), "langdistance");
-            Svømmer NySvømmer2 = new Svømmer("Vegeta", 36, "konkurrencesvømmer", 10010001, "Mand", 4.30, LocalDate.of(2023,11,30), "langdistance");
-            Svømmer NySvømmer3 = new Svømmer("Piccolo", 55, "konkurrencesvømmer", 66666666, "Mand", 6.05, LocalDate.of(2023,11,30), "langdistance");
-            Svømmer NySvømmer4 = new Svømmer("Krillin", 29, "konkurrencesvømmer", 69696969, "Mand", 10.55, LocalDate.of(2023,11,30), "langdistance");
-            Svømmer NySvømmer5 = new Svømmer("Tenshinhan", 31, "konkurrencesvømmer", 21212121, "Mand", 8.33, LocalDate.of(2023,11,30), "langdistance");
+            Svømmer NySvømmer1 = new Svømmer("Goku", 30, "konkurrencesvømmer", 12345678, "Mand", 4.10, LocalDate.of(2023,11,30), "langdistance",0);
+            Svømmer NySvømmer2 = new Svømmer("Vegeta", 36, "konkurrencesvømmer", 10010001, "Mand", 4.30, LocalDate.of(2023,11,30), "langdistance",0);
+            Svømmer NySvømmer3 = new Svømmer("Piccolo", 55, "konkurrencesvømmer", 66666666, "Mand", 6.05, LocalDate.of(2023,11,30), "langdistance",0);
+            Svømmer NySvømmer4 = new Svømmer("Krillin", 29, "konkurrencesvømmer", 69696969, "Mand", 10.55, LocalDate.of(2023,11,30), "langdistance",0);
+            Svømmer NySvømmer5 = new Svømmer("Tenshinhan", 31, "konkurrencesvømmer", 21212121, "Mand", 8.33, LocalDate.of(2023,11,30), "langdistance",0);
             svømmer.add(NySvømmer1);
             svømmer.add(NySvømmer2);
             svømmer.add(NySvømmer3);
