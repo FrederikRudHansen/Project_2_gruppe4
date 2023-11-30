@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Menu  {
-
+    static BetalingSystem betalingSystem = new BetalingSystem(0,0);
     static Scanner tastaturMenu = new Scanner(System.in);
     static Medlem medlem = new Medlem();
     static boolean run = true;
@@ -26,12 +26,15 @@ while (run){
                 System.out.println("2. Betal\n");
                 System.out.print("indtast tal:");
                 hovedeMenu = tastaturMenu.nextInt();
+
                 switch (hovedeMenu){
                     case 1:
-                        //Se restance metode//
+                        medlem.visRestance();
+                        break;
                     case 2:
                         //Betal metode//
                         hovedeMenu = tastaturMenu.nextInt();
+                        break;
                 }
             }
             case 2 -> {
