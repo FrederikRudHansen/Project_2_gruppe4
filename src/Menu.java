@@ -6,6 +6,7 @@ public class Menu  {
     static boolean run = true;
 
     public static void menu() {
+        medlem.fastmedlem();
 while (run){
         System.out.println("Velkommen til Delfin Svømmehallen\n");
         System.out.println("1. Betaling");
@@ -37,7 +38,7 @@ while (run){
                 }
             }
             case 2 -> {
-                System.out.println("\n1. Se meldemmer");
+                System.out.println("\n1. Se medlemmer");
                 System.out.println("2. Opret medlem");
                 System.out.println("3. Slet medlem\n");
                 System.out.print("indtast tal:");
@@ -45,7 +46,6 @@ while (run){
                 switch (hovedeMenu1){
                     case 1:
                         System.out.println(Medlem.medlemmer);
-                        bitchTastatur = tastaturMenu.nextLine();
                         break;
                     case 2:
                         System.out.println("Opret medlem");
@@ -54,7 +54,7 @@ while (run){
                 }
             }
             case 3 -> {
-                System.out.println("\n1. Se oversigt over alle");
+                System.out.println("\n1. Se oversigt over alle svømmere");
                 System.out.println("2. Top 5 svømmere");
                 System.out.println("3. Opret svømmer");
                 System.out.println("4. Slet svømmer\n");
@@ -62,13 +62,18 @@ while (run){
                 hovedeMenu = tastaturMenu.nextInt();
                 switch (hovedeMenu){
                     case 1:
-                        //Se oversigt over alle//
+                        Svømmer svømmer = new Svømmer();
+                        System.out.println(Svømmer.svømmer);
+                        break;
                     case 2:
-                        //Top 5 Svømmere metode//
+                        Svømmer tid = new Svømmer();
+                        tid.top5svømmere();
+                        System.out.println(Svømmer.top5svømmer);
+                        break;
                     case 3:
                         //Opret svømmer metode//
                     case 4:
-                        //Slet svømmer metdoe//
+                        //Slet svømmer metode//
                 }
             }
             case 4 -> {
