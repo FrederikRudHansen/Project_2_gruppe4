@@ -35,11 +35,11 @@ public class Svømmer extends Medlem {
 
     public void fastsvømmer() {
         if (fastsvømmerprettet == false) {
-            Svømmer NySvømmer1 = new Svømmer("Goku", 30, "konkurrencesvømmer", 12345678, "Mand", 4.10, LocalDate.of(2023,11,30), "langdistance",0);
-            Svømmer NySvømmer2 = new Svømmer("Vegeta", 36, "konkurrencesvømmer", 10010001, "Mand", 4.30, LocalDate.of(2023,11,30), "langdistance",0);
-            Svømmer NySvømmer3 = new Svømmer("Piccolo", 55, "konkurrencesvømmer", 66666666, "Mand", 6.05, LocalDate.of(2023,11,30), "langdistance",0);
-            Svømmer NySvømmer4 = new Svømmer("Krillin", 29, "konkurrencesvømmer", 69696969, "Mand", 10.55, LocalDate.of(2023,11,30), "langdistance",0);
-            Svømmer NySvømmer5 = new Svømmer("Tenshinhan", 31, "konkurrencesvømmer", 21212121, "Mand", 8.33, LocalDate.of(2023,11,30), "langdistance",0);
+            Svømmer NySvømmer1 = new Svømmer("Goku", 30, "Elite Svømmer", 12345678, "Mand", 4.10, LocalDate.of(2023,11,30), "langdistance",restance);
+            Svømmer NySvømmer2 = new Svømmer("Vegeta", 36, "Elite Svømmer", 10010001, "Mand", 4.30, LocalDate.of(2023,11,30), "langdistance",restance);
+            Svømmer NySvømmer3 = new Svømmer("Piccolo", 55, "Elite Svømmer", 66666666, "Mand", 6.05, LocalDate.of(2023,11,30), "langdistance",restance);
+            Svømmer NySvømmer4 = new Svømmer("Krillin", 29, "Elite Svømmer", 69696969, "Mand", 10.55, LocalDate.of(2023,11,30), "langdistance",restance);
+            Svømmer NySvømmer5 = new Svømmer("Tenshinhan", 31, "Elite Svømmer", 21212121, "Mand", 8.33, LocalDate.of(2023,11,30), "langdistance",restance);
             svømmer.add(NySvømmer1);
             svømmer.add(NySvømmer2);
             svømmer.add(NySvømmer3);
@@ -57,8 +57,7 @@ public class Svømmer extends Medlem {
         }
     @Override
     public String toString() {
-        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nAktivitetsform: "+aktivitetsform+"\n\nTelefon: +45" +tlf+
-                "\n\nRestance: " +restance+"\n_____________________\n" + "Svømmer:\n" + navn + "\nStævne:\n" + stævne + "\nDato:\n" + dato +
-                "\nSluttidspunkt:\n" + tid + "\n_____________________\n";
+        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nAktivitetsform: "+aktivitetsform+ "\n\nStævne: " + stævne + "\n\nDato: " + dato +
+                "\n\nSluttidspunkt: " + tid +"\n\nTelefon: +45" +tlf+"\n\nRestance: " +restance+"\n_____________________\n";
     }
 }
