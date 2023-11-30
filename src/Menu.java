@@ -70,7 +70,7 @@ while (run){
                     case 3:
                         //Opret svømmer metode//
                     case 4:
-                        //Slet svømmer metdoe//
+                        //Slet svømmer metode//
                 }
             }
             case 4 -> {
