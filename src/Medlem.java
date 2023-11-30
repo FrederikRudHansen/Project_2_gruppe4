@@ -15,14 +15,16 @@ public class Medlem {
     int restance;
     int tlf;
 
-    Medlem(String navn, int alder, String af, int tlf, String køn) {
+
+    Medlem(String navn, int alder, String af, int tlf, String køn, int restance) {
         this.navn = navn;
         this.medlemID = nextMedlemID++;
         this.alder = alder;
         aktivitetsform = af;
-        this.restance = 1600;
+        this.restance=restance;
         this.tlf = tlf;
         this.køn = køn;
+
     }
 
     public Medlem() {
@@ -31,21 +33,38 @@ public class Medlem {
         }
     }
 
+    public void visRestance(){
+        for (Medlem medlem : medlemmer){
+            System.out.println("Navn: "+ medlem.navn);
+            System.out.println("Restance "+ medlem.restance);
+            System.out.println("Id "+ medlem.medlemID+"\n\n");
+        }
+    }
+
     public void opretMedlem() {
         System.out.println("\n Medlemmer ⇩");
         System.out.println("Indtast navn");
-        String navn = tast.nextLine();
+
+        navn = tast.nextLine();
+
         System.out.println("Indtast køn");
-        String køn = tast.nextLine();
+        køn = tast.nextLine();
         if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
+
             System.out.println("Indtast alder");
-            int alder = tast.nextInt();
+            int alder = Integer.parseInt(tast.nextLine());
+            int restance;
+            if (alder < 17){
+                restance=+1000;
+            }else{
+                restance=+1600;
+            }
             System.out.println("Indtast ønsket aktivitet");
-            tast.nextLine();
+
             String af = tast.nextLine();
             System.out.println("Indtast Telefon nummer");
-            int tlf = tast.nextInt();
-            Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn);
+            int tlf = Integer.parseInt(tast.nextLine());
+            Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn, restance);
             medlemmer.add(nyMedlem);
             Menu.menu();
         } else {
@@ -56,7 +75,11 @@ public class Medlem {
     public String toString() {
         return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nAktivitetsform: "+aktivitetsform+"\n\nTelefon: +45" +tlf+ "\n\nRestance: " +restance+"\n_____________________\n";
     }
+
+
 }
+
+
 
 class Svømmer extends Medlem {
     int nextMedlemID = 200;
@@ -64,8 +87,8 @@ class Svømmer extends Medlem {
     LocalDate dato;
     String discipliner;
 
-    Svømmer(String navn, int alder, String af, int tlf, String køn, double tid, LocalDate dato, String dp) {
-        super(navn, alder, af, tlf, køn);
+    Svømmer(String navn, int alder, String af, int tlf, String køn, double tid, LocalDate dato, String dp, int restance) {
+        super(navn,alder,af,tlf,køn,restance);
         this.tid = tid;
         this.dato = dato;
         discipliner = dp;
