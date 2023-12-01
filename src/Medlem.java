@@ -46,11 +46,11 @@ public class Medlem {
 
     public void fastmedlem() {
         if (fastmedlemoprettet == false) {
-            Medlem nyMedlem1 = new Medlem("Goku", 30, "konkurrencesvømmer", 12345678, "Mand",0);
-            Medlem nyMedlem2 = new Medlem("Vegeta", 36, "konkurrencesvømmer", 10010001, "Mand",0);
-            Medlem nyMedlem3 = new Medlem("Piccolo", 55, "konkurrencesvømmer", 66666666, "Mand",0);
-            Medlem nyMedlem4 = new Medlem("Krillin", 29, "konkurrencesvømmer", 69696969, "Mand",0);
-            Medlem nyMedlem5 = new Medlem("Tenshinhan", 31, "konkurrencesvømmer", 21212121, "Mand",0);
+            Medlem nyMedlem1 = new Medlem("Goku", 30, "Elite Svømmer", 12345678, "Mand",1600);
+            Medlem nyMedlem2 = new Medlem("Vegeta", 36, "Elite Svømmer", 10010001, "Mand",1600);
+            Medlem nyMedlem3 = new Medlem("Piccolo", 55, "Elite Svømmer", 66666666, "Mand",1600);
+            Medlem nyMedlem4 = new Medlem("Krillin", 29, "Elite Svømmer", 69696969, "Mand",1600);
+            Medlem nyMedlem5 = new Medlem("Tenshinhan", 31, "Elite Svømmer", 21212121, "Mand",1600);
             medlemmer.add(nyMedlem1);
             medlemmer.add(nyMedlem2);
             medlemmer.add(nyMedlem3);
