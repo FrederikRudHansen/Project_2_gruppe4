@@ -73,7 +73,7 @@ public class Medlem {
             System.out.println("Indtast alder");
             int alder = Integer.parseInt(tast.nextLine());
             int restance;
-            if (alder < 17) {
+            if (alder < 18) {
                 restance = +1000;
             } else {
                 restance = +1600;
