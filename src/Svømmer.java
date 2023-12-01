@@ -1,12 +1,11 @@
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class Svømmer extends Medlem {
 
-    public static ArrayList<Svømmer> svømmer;
+    public static ArrayList<Svømmer> svømmer = new ArrayList<>();
     public static ArrayList<Svømmer> top5svømmer = new ArrayList<Svømmer>();
     public static boolean fastsvømmerprettet = false;
     public static int nextMedlemID = 200;
@@ -26,7 +25,6 @@ public class Svømmer extends Medlem {
                 svømmer = new ArrayList<>();
             }
             fastsvømmer();
-
     }
 
     public double gettid() {
@@ -57,7 +55,45 @@ public class Svømmer extends Medlem {
         }
     @Override
     public String toString() {
-        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nAktivitetsform: "+aktivitetsform+ "\n\nStævne: " + stævne + "\n\nDato: " + dato +
-                "\n\nSluttidspunkt: " + tid +"\n\nTelefon: +45" +tlf+"\n\nRestance: " +restance+"\n_____________________\n";
+        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nSluttidspunkt: " + tid +"\n\nDisciplin: "+aktivitetsform+ "\n\nStævne: " + stævne + "\n\nDato: " + dato +
+                "\n\nTelefon: +45" +tlf+"\n\nRestance: " +restance+"\n_____________________\n";
+    }
+    public void opretEliteSvømmer(){
+        System.out.println("\n Elite Svømmere ⇩\n");
+        System.out.println("Indtast navn");
+        navn = tast.nextLine();
+        System.out.println("Indtast køn");
+        køn = tast.nextLine();
+        if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
+            System.out.println("Indtast alder");
+            int alder = Integer.parseInt(tast.nextLine());
+            int restance;
+            if (alder < 18) {
+                restance = +1000;
+            } else {
+                restance = +1600;
+            }
+            System.out.println("Indtast disciplin");
+            String dp = tast.nextLine();
+            System.out.println("Indtast stævne");
+            stævne = tast.nextLine();
+            System.out.println("Indtast bedste tid");
+            double tid = tast.nextDouble();
+            System.out.println("Indtast dato for bedste tid [dd-MM-yyyy]");
+
+            tast.nextLine();
+            String datoString = tast.nextLine();
+            DateTimeFormatter datoFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            dato = LocalDate.parse(datoString,datoFormatter);
+
+
+            System.out.println("Indtast Telefon nummer");
+            int tlf = Integer.parseInt(tast.nextLine());
+            Svømmer nySvømmer = new Svømmer(navn,alder,dp,tlf,køn,tid,dato,stævne,restance);
+            svømmer.add(nySvømmer);
+            Menu.menu();
+        } else {
+            System.out.println("not a køn stupid");
+        }
     }
 }

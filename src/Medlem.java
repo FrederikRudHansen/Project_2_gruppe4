@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Medlem {
-    public static ArrayList<Medlem> medlemmer;
+    public static ArrayList<Medlem> medlemmer = new ArrayList<>();
     public static boolean fastmedlemoprettet = false;
     static Scanner tast = new Scanner(System.in);
     private static int nextMedlemID = 100;
@@ -24,7 +24,6 @@ public class Medlem {
         this.restance = restance;
         this.tlf = tlf;
         this.køn = køn;
-
     }
 
     public Medlem() {
@@ -32,9 +31,6 @@ public class Medlem {
             medlemmer = new ArrayList<>();
         }
     }
-
-
-
 
     public void visRestance() {
         for (Medlem medlem : medlemmer) {
@@ -61,7 +57,7 @@ public class Medlem {
     }
 
     public void opretMedlem() {
-        System.out.println("\n Medlemmer ⇩");
+        System.out.println("\n Medlemmer ⇩\n");
         System.out.println("Indtast navn");
 
         navn = tast.nextLine();

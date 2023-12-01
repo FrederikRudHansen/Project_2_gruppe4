@@ -61,16 +61,16 @@ while (run){
             }
 
             case 3 -> {
-                System.out.println("\n1. Se oversigt over alle svømmere");
-                System.out.println("2. Top 5 svømmere");
-                System.out.println("3. Opret svømmer");
-                System.out.println("4. Slet svømmer\n");
-                System.out.print("indtast tal: ");
+                System.out.println("\n1. Se oversigt over alle elite svømmere");
+                System.out.println("2. Top 5 elite Svømmere");
+                System.out.println("3. Opret elite Svømmere");
+                System.out.println("4. Slet elite Svømmer\n");
+                System.out.print("Indtast tal: ");
                 hovedeMenu = tastaturMenu.nextInt();
                 switch (hovedeMenu){
                     case 1:
                         Svømmer svømmer = new Svømmer();
-                        System.out.println(Svømmer.svømmer);
+                        System.out.println(Svømmer.svømmer); // LAV EN GENERIC METODE DER TAGER IMOD EN ARRAYLIST SOM ARGUMENT OG RETURNERER EN STRING UDEN BRACKETS+KOMMA
                         break;
                     case 2:
                         Svømmer tid = new Svømmer();
@@ -78,7 +78,8 @@ while (run){
                         System.out.println(Svømmer.top5svømmer);
                         break;
                     case 3:
-                        //Opret svømmer metode//
+                        Svømmer svømmer1 = new Svømmer();
+                        svømmer1.opretEliteSvømmer();
                     case 4:
                         //Slet svømmer metode//
                 }
