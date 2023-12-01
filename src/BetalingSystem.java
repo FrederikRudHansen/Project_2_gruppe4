@@ -1,4 +1,4 @@
-public class BetalingSystem {
+public class BetalingSystem extends Medlem {
     int balance;
     int reseveretPenge;
 
@@ -8,6 +8,5 @@ public class BetalingSystem {
     }
 
     public void betalRestance(){
-
     }
 }

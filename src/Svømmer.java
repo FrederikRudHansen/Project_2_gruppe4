@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -91,6 +94,12 @@ public class Svømmer extends Medlem {
             int tlf = Integer.parseInt(tast.nextLine());
             Svømmer nySvømmer = new Svømmer(navn,alder,dp,tlf,køn,tid,dato,stævne,restance);
             svømmer.add(nySvømmer);
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti))) { //GEMMER SVØMMERE I "Medlemmer.txt" FIL
+                writer.write(nySvømmer.toString()); // MANGLER LOGIK TIL AT GEMME LISTEN
+                writer.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             Menu.menu();
         } else {
             System.out.println("not a køn stupid");

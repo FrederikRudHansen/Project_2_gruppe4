@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,6 +17,7 @@ public class Medlem {
     String aktivitetsform;
     int restance;
     int tlf;
+    String filsti = "Medlemmer.txt";
 
 
     Medlem(String navn, int alder, String af, int tlf, String køn, int restance) {
@@ -81,7 +85,12 @@ public class Medlem {
             int tlf = Integer.parseInt(tast.nextLine());
             Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn, restance);
             medlemmer.add(nyMedlem);
-
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti))) { //GEMMER MEDLEMMER I "Medlemmer.txt" FIL
+                writer.write(nyMedlem.toString());
+                writer.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             Menu.menu();
         } else {
             System.out.println("not a køn");

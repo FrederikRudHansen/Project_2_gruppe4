@@ -7,6 +7,7 @@ public class Menu  {
 
     public static void menu() {
         medlem.fastmedlem();
+
 while (run){
         System.out.println("Velkommen til Delfin Svømmehallen\n");
         System.out.println("1. Betaling");
