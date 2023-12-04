@@ -69,7 +69,8 @@ public class Svømmer extends Medlem {
         køn = tast.nextLine();
         if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
             System.out.println("Indtast alder");
-            int alder = Integer.parseInt(tast.nextLine());
+            int alder = Alderberegning.beregnAlder();
+
             int restance;
             if (alder < 18) {
                 restance = +1000;
