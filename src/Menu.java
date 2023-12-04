@@ -9,7 +9,8 @@ public class Menu  {
         medlem.fastmedlem();
 
 while (run){
-        System.out.println("Velkommen til Delfin Svømmehallen\n");
+
+    System.out.println("Velkommen til Delfin Svømmehallen\n");
         System.out.println("1. Betaling");
         System.out.println("2. Medlemmer");
         System.out.println("3. Elite Svømmere");
