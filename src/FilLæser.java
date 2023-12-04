@@ -3,8 +3,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class FilLæser {
 
+public class FilLæser {
 
     public void LæsMedlemFil(ArrayList<Medlem> medlemmer){
         String fil = "Medlemmer.txt";
