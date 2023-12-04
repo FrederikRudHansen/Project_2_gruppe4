@@ -11,8 +11,7 @@ public class Menu  {
         while (run){
             try {
                 medlem.fastmedlem();
-=======
-        medlem.fastmedlem();
+
 
 while (run){
 
@@ -27,17 +26,7 @@ while (run){
         String bitchTastatur;
 
 
-                while (run) {
 
-                    System.out.println("1. Betaling");
-                    System.out.println("2. Medlemmer");
-                    System.out.println("3. Elite Svømmere");
-                    System.out.println("4. Afslut\n");
-                    System.out.print("indtast tal: ");
-                    int hovedeMenu = tastaturMenu.nextInt();
-
-                    int hovedeMenu1;
-                    String bitchTastatur;
 
 
                     switch (hovedeMenu) {
