@@ -66,10 +66,10 @@ public class Svømmer extends Medlem {
         System.out.println("\n Elite Svømmere ⇩\n");
         System.out.println("Indtast navn");
         navn = tast.nextLine();
-        System.out.println("Indtast køn");
+        System.out.println("\nIndtast køn");
         køn = tast.nextLine();
         if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
-            System.out.println("Indtast alder");
+            System.out.println("\nIndtast alder");
             int alder = Alderberegning.beregnAlder();
 
             int restance;
@@ -80,13 +80,13 @@ public class Svømmer extends Medlem {
             } else {
                 restance = 1200;
             }
-            System.out.println("Indtast disciplin");
+            System.out.println("\nIndtast disciplin");
             String dp = tast.nextLine();
-            System.out.println("Indtast stævne");
+            System.out.println("\nIndtast stævne");
             stævne = tast.nextLine();
-            System.out.println("Indtast bedste tid");
+            System.out.println("\nIndtast bedste tid");
             double tid = tast.nextDouble();
-            System.out.println("Indtast dato for bedste tid [dd-MM-yyyy]");
+            System.out.println("\nIndtast dato for bedste tid [dd-MM-yyyy]");
 
             tast.nextLine();
             String datoString = tast.nextLine();
@@ -94,7 +94,7 @@ public class Svømmer extends Medlem {
             dato = LocalDate.parse(datoString,datoFormatter);
 
 
-            System.out.println("Indtast Telefon nummer");
+            System.out.println("\nIndtast Telefon nummer");
             int tlf = Integer.parseInt(tast.nextLine());
             Svømmer nySvømmer = new Svømmer(navn,alder,dp,tlf,køn,tid,dato,stævne,restance);
             svømmer.add(nySvømmer);

@@ -7,7 +7,6 @@ public class Menu  {
 
     public static void menu() {
 
-        System.out.println("Velkommen til Delfin Svømmehallen\n");
         while (run){
             try {
                 medlem.fastmedlem();
@@ -41,8 +40,7 @@ while (run){
                                     medlem.visRestance();
                                     break;
                                 case 2:
-                                    //Betal metode//
-                                    hovedeMenu = tastaturMenu.nextInt();
+                                    betalingSystem.betalRestance();
                                     break;
                             }
                         }
@@ -83,7 +81,7 @@ while (run){
                             switch (hovedeMenu) {
                                 case 1:
                                     Svømmer svømmer = new Svømmer();
-                                    System.out.println(Svømmer.svømmer); // LAV EN GENERIC METODE DER TAGER IMOD EN ARRAYLIST SOM ARGUMENT OG RETURNERER EN STRING UDEN BRACKETS+KOMMA
+                                    System.out.println(Svømmer.svømmer);
                                     break;
                                 case 2:
                                     Svømmer tid = new Svømmer();

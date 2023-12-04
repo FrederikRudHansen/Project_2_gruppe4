@@ -75,7 +75,7 @@ public class Medlem {
 
         navn = tast.nextLine();
 
-        System.out.println("Indtast køn");
+        System.out.println("\nIndtast køn");
         køn = tast.nextLine();
         if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
 
@@ -88,10 +88,10 @@ public class Medlem {
             } else {
                 restance = 1200;
             }
-            System.out.println("Indtast ønsket aktivitet");
+            System.out.println("\nIndtast ønsket aktivitet");
 
             String af = tast.nextLine();
-            System.out.println("Indtast Telefon nummer");
+            System.out.println("\nIndtast Telefon nummer");
             int tlf = Integer.parseInt(tast.nextLine());
 
             Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn, restance);
@@ -111,11 +111,11 @@ public class Medlem {
         this.navn = navn;
     }
 
-    public void setKøn(String køn) {
+    public void setKøn(String køn) { //BRUGES KUN MÅSKE
         this.køn = køn;
     }
 
-    public void setAlder(int alder) {
+    public void setAlder(int alder) { // BRUGES KUN MÅSKE
         this.alder = alder;
     }
 
