@@ -1,11 +1,12 @@
-public class BetalingSystem {
+public class BetalingSystem extends Medlem {
     int balance;
     int reseveretPenge;
-    String test;
 
     BetalingSystem(int bal, int resPenge) {
         balance = bal;
         reseveretPenge = resPenge;
     }
 
+    public void betalRestance(){
     }
+}

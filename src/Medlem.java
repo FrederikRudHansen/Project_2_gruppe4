@@ -1,9 +1,12 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Medlem {
-    public static ArrayList<Medlem> medlemmer;
+    public static ArrayList<Medlem> medlemmer = new ArrayList<>();
     public static boolean fastmedlemoprettet = false;
     static Scanner tast = new Scanner(System.in);
     private static int nextMedlemID = 100;
@@ -14,6 +17,7 @@ public class Medlem {
     String aktivitetsform;
     int restance;
     int tlf;
+    String filsti = "Medlemmer.txt";
 
 
     Medlem(String navn, int alder, String af, int tlf, String køn, int restance) {
@@ -24,7 +28,6 @@ public class Medlem {
         this.restance = restance;
         this.tlf = tlf;
         this.køn = køn;
-
     }
 
     public Medlem() {
@@ -32,9 +35,6 @@ public class Medlem {
             medlemmer = new ArrayList<>();
         }
     }
-
-
-
 
     public void visRestance() {
         for (Medlem medlem : medlemmer) {
@@ -61,7 +61,7 @@ public class Medlem {
     }
 
     public void opretMedlem() {
-        System.out.println("\n Medlemmer ⇩");
+        System.out.println("\n Medlemmer ⇩\n");
         System.out.println("Indtast navn");
 
         navn = tast.nextLine();
@@ -85,7 +85,12 @@ public class Medlem {
             int tlf = Integer.parseInt(tast.nextLine());
             Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn, restance);
             medlemmer.add(nyMedlem);
-
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti))) { //GEMMER MEDLEMMER I "Medlemmer.txt" FIL
+                writer.write(nyMedlem.toString());
+                writer.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             Menu.menu();
         } else {
             System.out.println("not a køn");
