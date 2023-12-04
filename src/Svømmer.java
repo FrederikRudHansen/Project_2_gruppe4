@@ -11,17 +11,18 @@ public class Svømmer extends Medlem {
     public static ArrayList<Svømmer> svømmer = new ArrayList<>();
     public static ArrayList<Svømmer> top5svømmer = new ArrayList<Svømmer>();
     public static boolean fastsvømmerprettet = false;
-    public static int nextMedlemID = 200;
+
     public double tid;
     public LocalDate dato;
     String stævne;
+    String idBogstav="S-";
 
         Svømmer(String navn, int alder, String af, int tlf, String køn, double tid, LocalDate dato, String st,int restance) {
             super(navn, alder, af, tlf, køn,restance);
             this.tid = tid;
             this.dato = dato;
             stævne = st;
-            this.medlemID = nextMedlemID++;
+
         }
         Svømmer (){
             if (svømmer == null) {
@@ -58,7 +59,7 @@ public class Svømmer extends Medlem {
         }
     @Override
     public String toString() {
-        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nSluttidspunkt: " + tid +"\n\nDisciplin: "+aktivitetsform+ "\n\nStævne: " + stævne + "\n\nDato: " + dato +
+        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+idBogstav+ medlemID +"\n\nSluttidspunkt: " + tid +"\n\nDisciplin: "+aktivitetsform+ "\n\nStævne: " + stævne + "\n\nDato: " + dato +
                 "\n\nTelefon: +45" +tlf+"\n\nRestance: " +restance+"\n_____________________\n";
     }
     public void opretEliteSvømmer(){
@@ -69,12 +70,15 @@ public class Svømmer extends Medlem {
         køn = tast.nextLine();
         if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
             System.out.println("Indtast alder");
-            int alder = Integer.parseInt(tast.nextLine());
+            int alder = Alderberegning.beregnAlder();
+
             int restance;
             if (alder < 18) {
                 restance = +1000;
-            } else {
+            }else if (alder > 17 && alder <60) {
                 restance = +1600;
+            } else {
+                restance = 1200;
             }
             System.out.println("Indtast disciplin");
             String dp = tast.nextLine();
