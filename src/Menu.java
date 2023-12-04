@@ -49,7 +49,11 @@ public class Menu  {
                             hovedeMenu1 = tastaturMenu.nextInt();
                             switch (hovedeMenu1) {
                                 case 1:
+                                    System.out.println("Kun medlem");
                                     System.out.println(Medlem.medlemmer);
+                                    System.out.println("Medlem og Elite svømmer");
+                                    System.out.println(Svømmer.svømmer);
+
                                     break;
                                 case 2:
                                     System.out.println("Opret medlem");

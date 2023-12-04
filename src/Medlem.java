@@ -9,8 +9,9 @@ public class Medlem {
     public static ArrayList<Medlem> medlemmer = new ArrayList<>();
     public static boolean fastmedlemoprettet = false;
     static Scanner tast = new Scanner(System.in);
-    private static int nextMedlemID = 100;
+    public static int nextMedlemID = 100;
     String navn;
+    String IdBogstav="M-";
     String køn;
     int medlemID;
     int alder;
@@ -22,12 +23,13 @@ public class Medlem {
 
     Medlem(String navn, int alder, String af, int tlf, String køn, int restance) {
         this.navn = navn;
-        this.medlemID = nextMedlemID++;
+        this.medlemID =nextMedlemID++;
         this.alder = alder;
         aktivitetsform = af;
         this.restance = restance;
         this.tlf = tlf;
         this.køn = køn;
+
     }
 
     public Medlem() {
@@ -35,6 +37,8 @@ public class Medlem {
             medlemmer = new ArrayList<>();
         }
     }
+
+
 
     public void visRestance() {
         for (Medlem medlem : medlemmer) {
@@ -46,17 +50,7 @@ public class Medlem {
 
     public void fastmedlem() {
         if (fastmedlemoprettet == false) {
-            Medlem nyMedlem1 = new Medlem("Goku", 30, "Elite Svømmer", 12345678, "Mand",1600);
-            Medlem nyMedlem2 = new Medlem("Vegeta", 36, "Elite Svømmer", 10010001, "Mand",1600);
-            Medlem nyMedlem3 = new Medlem("Piccolo", 55, "Elite Svømmer", 66666666, "Mand",1600);
-            Medlem nyMedlem4 = new Medlem("Krillin", 29, "Elite Svømmer", 69696969, "Mand",1600);
-            Medlem nyMedlem5 = new Medlem("Tenshinhan", 31, "Elite Svømmer", 21212121, "Mand",1600);
-            medlemmer.add(nyMedlem1);
-            medlemmer.add(nyMedlem2);
-            medlemmer.add(nyMedlem3);
-            medlemmer.add(nyMedlem4);
-            medlemmer.add(nyMedlem5);
-            fastmedlemoprettet = true;
+
         }
     }
 
@@ -74,14 +68,17 @@ public class Medlem {
             int restance;
             if (alder < 18) {
                 restance = +1000;
-            } else {
+            }else if (alder > 17 && alder <60) {
                 restance = +1600;
+            } else {
+                restance = 1200;
             }
             System.out.println("Indtast ønsket aktivitet");
 
             String af = tast.nextLine();
             System.out.println("Indtast Telefon nummer");
             int tlf = Integer.parseInt(tast.nextLine());
+
             Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn, restance);
             medlemmer.add(nyMedlem);
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti))) { //GEMMER MEDLEMMER I "Medlemmer.txt" FIL
@@ -123,7 +120,7 @@ public class Medlem {
 
     @Override
     public String toString() {
-        return "Medlem: " + navn + ", " + køn + ", " + alder + "\n\nMedlems ID: " + medlemID + "\n\nAktivitetsform: " + aktivitetsform + "\n\nTelefon: +45" + tlf + "\n\nRestance: " + restance + "\n_____________________\n";
+        return "Medlem: " + navn + ", " + køn + ", " + alder + "\n\nMedlems ID: " + IdBogstav+ medlemID + "\n\nAktivitetsform: " + aktivitetsform + "\n\nTelefon: +45" + tlf + "\n\nRestance: " + restance + "\n_____________________\n";
     }
 }
   
