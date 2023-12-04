@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Medlem {
+
     public static ArrayList<Medlem> medlemmer = new ArrayList<>();
     public static boolean fastmedlemoprettet = false;
     static Scanner tast = new Scanner(System.in);
@@ -51,6 +52,20 @@ public class Medlem {
     public void fastmedlem() {
         if (fastmedlemoprettet == false) {
 
+
+
+            Medlem nyMedlem1 = new Medlem("Mikkel Felps", 43, "Langdistance", 82746612, "Mand",1600);
+            Medlem nyMedlem2 = new Medlem("Karen Karensen", 32, "Crawl", 72846285, "Kvinde",1600);
+            Medlem nyMedlem3 = new Medlem("Ole Jensen", 67, "Fri Svømning", 42758344, "Mand",1200);
+            Medlem nyMedlem4 = new Medlem("Michelle Jørgensen", 24, "Fri Svømning", 42735573, "Kvinde",1600);
+            Medlem nyMedlem5 = new Medlem("Nicklas Jørgensen", 9, "Børnepool", 42735573, "Mand",1000);
+            medlemmer.add(nyMedlem1);
+            medlemmer.add(nyMedlem2);
+            medlemmer.add(nyMedlem3);
+            medlemmer.add(nyMedlem4);
+            medlemmer.add(nyMedlem5);
+            fastmedlemoprettet = true;
+
         }
     }
 
@@ -92,6 +107,19 @@ public class Medlem {
             System.out.println("not a køn");
         }
     }
+    public void setNavn(String navn) {
+        this.navn = navn;
+    }
+
+    public void setKøn(String køn) {
+        this.køn = køn;
+    }
+
+    public void setAlder(int alder) {
+        this.alder = alder;
+    }
+
+
 
     public void sletMedlem(int medlemsID) {  // sletmedlemID
         for (Medlem medlem : medlemmer) {

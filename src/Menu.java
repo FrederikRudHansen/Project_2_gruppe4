@@ -6,10 +6,26 @@ public class Menu  {
     static boolean run = true;
 
     public static void menu() {
+
         System.out.println("Velkommen til Delfin Svømmehallen\n");
         while (run){
             try {
                 medlem.fastmedlem();
+=======
+        medlem.fastmedlem();
+
+while (run){
+
+    System.out.println("Velkommen til Delfin Svømmehallen\n");
+        System.out.println("1. Betaling");
+        System.out.println("2. Medlemmer");
+        System.out.println("3. Elite Svømmere");
+        System.out.println("4. Afslut\n");
+        System.out.print("indtast tal: ");
+        int hovedeMenu = tastaturMenu.nextInt();
+        int hovedeMenu1;
+        String bitchTastatur;
+
 
                 while (run) {
 
