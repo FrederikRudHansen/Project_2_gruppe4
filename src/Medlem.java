@@ -92,7 +92,7 @@ public class Medlem {
             System.out.println("\nIndtast ønsket passiv eller aktiv");
             String af = tast.nextLine();
                 while(aktivPassiv) {
-                    try {
+                   af = tast.nextLine();
                         if (af.equalsIgnoreCase("passiv")) {
 
                             restance = 500;
@@ -100,12 +100,11 @@ public class Medlem {
                         }
                         if (af.equalsIgnoreCase("aktiv")) {
                             aktivPassiv = false;
+                        } else {
+                            System.out.println("Ikke gyldigt, prøv igen");
                         }
-                    } catch (Exception pp) {
-                        System.out.println("Forkert input\n");
-                        System.out.println("Indtast Passiv eller Aktiv\n");
                     }
-                }
+
 
 
             System.out.println("\nIndtast Telefon nummer");
