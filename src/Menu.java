@@ -40,6 +40,7 @@ while (run){
                                     medlem.visRestance();
                                     break;
                                 case 2:
+
                                     betalingSystem.betalRestance();
                                     break;
                             }

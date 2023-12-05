@@ -118,6 +118,9 @@ public class Medlem {
     public void setAlder(int alder) { // BRUGES KUN MÅSKE
         this.alder = alder;
     }
+    public void setRestance(int nyRestance) {
+        this.restance = nyRestance;
+    }
 
 
 
@@ -150,5 +153,7 @@ public class Medlem {
     public String toString() {
         return "Medlem: " + navn + ", " + køn + ", " + alder + "\n\nMedlems ID: " + IdBogstav+ medlemID + "\n\nAktivitetsform: " + aktivitetsform + "\n\nTelefon: +45" + tlf + "\n\nRestance: " + restance + "\n_____________________\n";
     }
+
+
 }
   
