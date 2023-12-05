@@ -22,7 +22,7 @@ public class BetalingSystem extends Medlem {
                 int indbetaling = tast.nextInt();
 
                 try {
-                    Thread.sleep(1000);
+
                     System.out.print("Beregner resterende beløb");
                     Thread.sleep(1000);
                     System.out.print(".");
