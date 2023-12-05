@@ -1,32 +1,34 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class Svømmer extends Medlem {
 
-    public static ArrayList<Svømmer> svømmer;
+    public static ArrayList<Svømmer> svømmer = new ArrayList<>();
     public static ArrayList<Svømmer> top5svømmer = new ArrayList<Svømmer>();
     public static boolean fastsvømmerprettet = false;
-    public static int nextMedlemID = 200;
+
     public double tid;
     public LocalDate dato;
     String stævne;
+    String idBogstav="S-";
 
         Svømmer(String navn, int alder, String af, int tlf, String køn, double tid, LocalDate dato, String st,int restance) {
             super(navn, alder, af, tlf, køn,restance);
             this.tid = tid;
             this.dato = dato;
             stævne = st;
-            this.medlemID = nextMedlemID++;
+
         }
         Svømmer (){
             if (svømmer == null) {
                 svømmer = new ArrayList<>();
             }
             fastsvømmer();
-
     }
 
     public double gettid() {
@@ -57,7 +59,54 @@ public class Svømmer extends Medlem {
         }
     @Override
     public String toString() {
-        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+ medlemID +"\n\nAktivitetsform: "+aktivitetsform+ "\n\nStævne: " + stævne + "\n\nDato: " + dato +
-                "\n\nSluttidspunkt: " + tid +"\n\nTelefon: +45" +tlf+"\n\nRestance: " +restance+"\n_____________________\n";
+        return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+idBogstav+ medlemID +"\n\nSluttidspunkt: " + tid +"\n\nDisciplin: "+aktivitetsform+ "\n\nStævne: " + stævne + "\n\nDato: " + dato +
+                "\n\nTelefon: +45" +tlf+"\n\nRestance: " +restance+"\n_____________________\n";
+    }
+    public void opretEliteSvømmer(){
+        System.out.println("\n Elite Svømmere ⇩\n");
+        System.out.println("Indtast navn");
+        navn = tast.nextLine();
+        System.out.println("\nIndtast køn");
+        køn = tast.nextLine();
+        if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
+            System.out.println("\nIndtast alder");
+            int alder = Alderberegning.beregnAlder();
+
+            int restance;
+            if (alder < 18) {
+                restance = +1000;
+            }else if (alder > 17 && alder <60) {
+                restance = +1600;
+            } else {
+                restance = 1200;
+            }
+            System.out.println("\nIndtast disciplin");
+            String dp = tast.nextLine();
+            System.out.println("\nIndtast stævne");
+            stævne = tast.nextLine();
+            System.out.println("\nIndtast bedste tid");
+            double tid = tast.nextDouble();
+            System.out.println("\nIndtast dato for bedste tid [dd-MM-yyyy]");
+
+            tast.nextLine();
+            String datoString = tast.nextLine();
+            DateTimeFormatter datoFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            dato = LocalDate.parse(datoString,datoFormatter);
+
+
+            System.out.println("\nIndtast Telefon nummer");
+            int tlf = Integer.parseInt(tast.nextLine());
+            Svømmer nySvømmer = new Svømmer(navn,alder,dp,tlf,køn,tid,dato,stævne,restance);
+            svømmer.add(nySvømmer);
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti))) { //GEMMER SVØMMERE I "Medlemmer.txt" FIL
+                writer.write(nySvømmer.toString()); // MANGLER LOGIK TIL AT GEMME LISTEN
+                writer.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Menu.menu();
+        } else {
+            System.out.println("not a køn stupid");
+        }
     }
 }
