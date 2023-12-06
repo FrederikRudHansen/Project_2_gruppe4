@@ -24,15 +24,14 @@ public class Alderberegning {
 
                 System.out.println("\nFødseldag: " + fødselsdag.format(datoFormatter));
 
-                Thread.sleep(1000);
-                System.out.print("\nBeregner alder");
-                Thread.sleep(1000);
-                System.out.print(".");
-                Thread.sleep(1000);         //DRAMATISK EFFEKT. SLET HVIS IRRITERENDE
-                System.out.print(".");
-                Thread.sleep(1000);
-                System.out.println(".");
-                Thread.sleep(1000);
+
+
+                String[] frames = {"Beregner alder: ⠋", "Beregner alder: ⠙", "Beregner alder: ⠹", "Beregner alder: ⠸", "Beregner alder: ⠼", "Beregner alder: ⠴", "Beregner alder: ⠦", "Beregner alder: ⠧", "Beregner alder: ⠇", "Beregner alder: ⠏"};
+                for (int i = 0; i < 50; i++) {
+                    System.out.print("\r" + frames[i % frames.length]);
+                    Thread.sleep(100);
+                }
+
 
                 alder = beregnAlder2(fødselsdag, LocalDate.now());
                 System.out.println("\nAlder: " + alder + " år");
