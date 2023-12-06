@@ -92,16 +92,15 @@ public class Medlem {
             System.out.println("\nIndtast ønsket passiv eller aktiv");
             String af = tast.nextLine();
                 while(aktivPassiv) {
-                   af = tast.nextLine();
-                        if (af.equalsIgnoreCase("passiv")) {
 
+                        if (af.equalsIgnoreCase("passiv")) {
                             restance = 500;
                             aktivPassiv = false;
-                        }
-                        if (af.equalsIgnoreCase("aktiv")) {
+                        }else if (af.equalsIgnoreCase("aktiv")) {
                             aktivPassiv = false;
                         } else {
                             System.out.println("Ikke gyldigt, prøv igen");
+                            af = tast.nextLine();
                         }
                     }
 

@@ -4,6 +4,7 @@ public class Menu  {
     static Scanner tastaturMenu = new Scanner(System.in);
     static Medlem medlem = new Medlem();
     static boolean run = true;
+    static Svømmer svømmerslet = new Svømmer();
 
     public static void menu() {
 
@@ -92,10 +93,14 @@ while (run){
                                 case 3:
                                     Svømmer svømmer1 = new Svømmer();
                                     svømmer1.opretEliteSvømmer();
+                                    break;
                                 case 4:
-                                    Svømmer svømmer2 = new Svømmer();
-                                    svømmer.sletSvømmer();
+                                    System.out.print("Indtast det ønskede ID:");
+                                    int medlemsIDSlet = tastaturMenu.nextInt();
+
+                                    svømmerslet.sletSvømmer(medlemsIDSlet);
                                     //Slet svømmer metode//
+                                    break;
                             }
                         }
                         case 4 -> {
@@ -113,4 +118,3 @@ while (run){
         } //Øverste while slut
     }
 }
-class MenuExc extends Exception{}
