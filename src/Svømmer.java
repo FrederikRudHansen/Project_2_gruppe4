@@ -109,4 +109,16 @@ public class Svømmer extends Medlem {
             System.out.println("not a køn stupid");
         }
     }
+    public void sletSvømmer(int medlemsID) {  // sletmedlemID
+        for (Svømmer s : svømmer) {
+            if (s.medlemID == medlemsID) {
+                svømmer.remove(svømmer);
+                System.out.println("Medlem med ID " + medlemsID + " er blevet slettet.");
+                return; // Når medlemmet er fundet og slettet, afsluttes metoden.
+            }
+        }
+        System.out.println("Medlem med ID " + medlemsID + " blev ikke fundet.");
+    }
+
+
 }

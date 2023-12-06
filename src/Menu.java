@@ -93,6 +93,8 @@ while (run){
                                     Svømmer svømmer1 = new Svømmer();
                                     svømmer1.opretEliteSvømmer();
                                 case 4:
+                                    Svømmer svømmer2 = new Svømmer();
+                                    svømmer.sletSvømmer();
                                     //Slet svømmer metode//
                             }
                         }
