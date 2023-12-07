@@ -52,7 +52,7 @@ public class Svømmer extends Medlem {
         System.out.println("\nIndtast køn");
         køn = tast.nextLine();
         if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
-            System.out.println("\nIndtast alder");
+
             int alder = Alderberegning.beregnAlder();
             int restance;
             if (alder < 18) {

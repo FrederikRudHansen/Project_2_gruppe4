@@ -9,7 +9,7 @@ public class Main {
 
         for (int i = 0; i <= 100; i++) {
             ProgressBar.showProgressBar(100,i);
-            Thread.sleep(1);
+            Thread.sleep(25);
         }
         System.out.println("\u001B[2;30;40m\u001B[32mProgress: [==================================================] 100%\u001B[0m");
         Menu.menu();
