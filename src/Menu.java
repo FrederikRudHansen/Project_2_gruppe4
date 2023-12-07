@@ -8,16 +8,11 @@ public class Menu  {
     static Medlem medlem = new Medlem();
     static boolean run = true;
     static Svømmer svømmerslet = new Svømmer();
-    static Medlem nyMedlem = new Medlem();
     static String filsti = "Medlemmer.txt";
 
     public static void menu() {
-
         while (run){
             try {
-
-
-
 while (run){
 
     System.out.println("Velkommen til Delfin Svømmehallen\n");
@@ -28,12 +23,6 @@ while (run){
         System.out.print("indtast tal: ");
         int hovedeMenu = tastaturMenu.nextInt();
         int hovedeMenu1;
-        String bitchTastatur;
-
-
-
-
-
                     switch (hovedeMenu) {
                         case 1 -> {
                             System.out.println("\n1. Se restance");
@@ -46,7 +35,6 @@ while (run){
                                     medlem.visRestance();
                                     break;
                                 case 2:
-
                                     betalingSystem.betalRestance();
                                     break;
                             }
@@ -63,7 +51,6 @@ while (run){
                                     System.out.println(Medlem.medlemmer);
                                     System.out.println("Medlem og Elite svømmer");
                                     System.out.println(Svømmer.svømmer);
-
                                     break;
                                 case 2:
                                     System.out.println("Opret medlem");
@@ -77,7 +64,6 @@ while (run){
                                     break;
                             }
                         }
-
                         case 3 -> {
                             System.out.println("\n1. Se oversigt over alle elite svømmere");
                             System.out.println("2. Top 5 elite Svømmere");
@@ -87,7 +73,6 @@ while (run){
                             hovedeMenu = tastaturMenu.nextInt();
                             switch (hovedeMenu) {
                                 case 1:
-                                    Svømmer svømmer = new Svømmer();
                                     System.out.println(Svømmer.svømmer);
                                     break;
                                 case 2:
@@ -102,9 +87,7 @@ while (run){
                                 case 4:
                                     System.out.print("Indtast det ønskede ID:");
                                     int medlemsIDSlet = tastaturMenu.nextInt();
-
                                     svømmerslet.sletSvømmer(medlemsIDSlet);
-                                    //Slet svømmer metode//
                                     break;
                             }
                         }
@@ -117,17 +100,13 @@ while (run){
                                 e.printStackTrace();
                             }
                             run = false;
-
-
                         }
                     }
                 }
-
             } catch(Exception e){
-
                 System.out.println("Ugyldig input");
                 tastaturMenu.nextLine();
             }
-        } //Øverste while slut
+        }
     }
 }

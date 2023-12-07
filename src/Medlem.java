@@ -21,7 +21,6 @@ public class Medlem {
     int tlf;
     String filsti = "Medlemmer.txt";
 
-
     Medlem(String navn, int alder, String af, int tlf, String køn, int restance) {
         this.navn = navn;
         this.medlemID =nextMedlemID++;
@@ -30,7 +29,6 @@ public class Medlem {
         this.restance = restance;
         this.tlf = tlf;
         this.køn = køn;
-
     }
 
     public Medlem() {
@@ -39,8 +37,6 @@ public class Medlem {
         }
     }
 
-
-
     public void visRestance() {
         for (Medlem medlem : medlemmer) {
             System.out.println("Navn: " + medlem.navn);
@@ -48,8 +44,6 @@ public class Medlem {
             System.out.println("Id " + medlem.medlemID + "\n\n");
         }
     }
-
-
 
     public void opretMedlem() {
         boolean aktivPassiv =true;
@@ -85,60 +79,29 @@ public class Medlem {
                             af = tast.nextLine();
                         }
                     }
-
-
-
             System.out.println("\nIndtast Telefon nummer");
             int tlf = Integer.parseInt(tast.nextLine());
-
             Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn, restance);
             medlemmer.add(nyMedlem);
-
             Menu.menu();
         } else {
             System.out.println("not a køn");
         }
     }
-    public void setNavn(String navn) {
-        this.navn = navn;
-    }
 
-    public void setKøn(String køn) { //BRUGES KUN MÅSKE
-        this.køn = køn;
-    }
-
-    public void setAlder(int alder) { // BRUGES KUN MÅSKE
-        this.alder = alder;
-    }
     public void setRestance(int nyRestance) {
         this.restance = nyRestance;
     }
 
-
-
-    public void sletMedlem(int medlemsID) {  // sletmedlemID
+    public void sletMedlem(int medlemsID) {
         for (Medlem medlem : medlemmer) {
             if (medlem.medlemID == medlemsID) {
                 medlemmer.remove(medlem);
                 System.out.println("Medlem med ID " + medlemsID + " er blevet slettet.");
-                return; // Når medlemmet er fundet og slettet, afsluttes metoden.
+                return;
             }
         }
         System.out.println("Medlem med ID " + medlemsID + " blev ikke fundet.");
-    }
-
-    public void sletDeltagelse(int konkurrenceID, int medlemsID) {
-        for (Medlem medlem : medlemmer) {
-            if (medlem.medlemID == medlemsID) {
-                medlem.sletDeltagelse(konkurrenceID);
-                return; // Når deltagelsen er fjernet, afsluttes metoden.
-            }
-        }
-        System.out.println("Medlem med ID " + medlemsID + " blev ikke fundet.");
-    }
-
-    public void sletDeltagelse(int konkurrenceID) {
-        // Implementer logikken til at fjerne deltagelsen i konkurrencen baseret på konkurrenceID
     }
 
     @Override
@@ -149,7 +112,5 @@ public class Medlem {
     public String filGem(){
         return navn+","+køn+","+alder+","+IdBogstav+","+medlemID+","+aktivitetsform+","+tlf+","+restance;
     }
-
-
 }
   

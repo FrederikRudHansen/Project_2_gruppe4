@@ -22,7 +22,6 @@ public class Svømmer extends Medlem {
             this.tid = tid;
             this.dato = dato;
             stævne = st;
-
         }
         Svømmer (){
             if (svømmer == null) {
@@ -48,20 +47,21 @@ public class Svømmer extends Medlem {
             svømmer.add(NySvømmer4);
             svømmer.add(NySvømmer5);
             fastsvømmerprettet = true;
-
-            //minimum 3 stævner?
         }
     }
+
     public void top5svømmere() {
         Collections.sort(svømmer, Comparator.comparing(Svømmer::gettid));
         top5svømmer.clear();
         top5svømmer.addAll(svømmer.subList(0,5));
         }
+
     @Override
     public String toString() {
         return "Medlem: "+ navn+", "+køn+", "+alder +"\n\nMedlems ID: "+idBogstav+ medlemID +"\n\nSluttidspunkt: " + tid +"\n\nDisciplin: "+aktivitetsform+ "\n\nStævne: " + stævne + "\n\nDato: " + dato +
                 "\n\nTelefon: +45" +tlf+"\n\nRestance: " +restance+"\n_____________________\n";
     }
+
     public void opretEliteSvømmer(){
         System.out.println("\n Elite Svømmere ⇩\n");
         System.out.println("Indtast navn");
@@ -71,7 +71,6 @@ public class Svømmer extends Medlem {
         if (køn.equalsIgnoreCase("Mand") || køn.equalsIgnoreCase("kvinde")) {
             System.out.println("\nIndtast alder");
             int alder = Alderberegning.beregnAlder();
-
             int restance;
             if (alder < 18) {
                 restance = +1000;
@@ -93,7 +92,6 @@ public class Svømmer extends Medlem {
             DateTimeFormatter datoFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             dato = LocalDate.parse(datoString,datoFormatter);
 
-
             System.out.println("\nIndtast Telefon nummer");
             int tlf = Integer.parseInt(tast.nextLine());
             Svømmer nySvømmer = new Svømmer(navn,alder,dp,tlf,køn,tid,dato,stævne,restance);
@@ -109,6 +107,7 @@ public class Svømmer extends Medlem {
             System.out.println("not a køn stupid");
         }
     }
+
     public void sletSvømmer(int medlemsID) {
         Iterator<Svømmer> iterator = svømmer.iterator();
         while (iterator.hasNext()) {
@@ -121,7 +120,4 @@ public class Svømmer extends Medlem {
         }
         System.out.println("Medlem med ID " + medlemsID + " blev ikke fundet.");
     }
-
-
-
 }

@@ -1,7 +1,6 @@
 public class BetalingSystem extends Medlem {
     int balance;
     int reseveretPenge;
-
     boolean medlemFundet = true;
     BetalingSystem(int bal, int resPenge) {
         balance = bal;
@@ -15,18 +14,15 @@ public class BetalingSystem extends Medlem {
 
         for (Medlem medlem : medlemmer) {
             if (medlem.medlemID == egenMedlemID) {
-
-
                 System.out.println("\nDin restance er: " + medlem.restance);
                 System.out.println("\nIndtast venligst beløbet: ");
                 int indbetaling = tast.nextInt();
 
                 try {
-
                     System.out.print("Beregner resterende beløb");
                     Thread.sleep(1000);
                     System.out.print(".");
-                    Thread.sleep(1000);         //DRAMATISK EFFEKT. SLET HVIS IRRITERENDE
+                    Thread.sleep(1000);
                     System.out.print(".");
                     Thread.sleep(1000);
                     System.out.println(".");
@@ -37,12 +33,9 @@ public class BetalingSystem extends Medlem {
                     System.out.println("\nResterende beløb: " + nyRestance );
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-
-
                     return;
                 }
             }
-
         }
         if (!medlemFundet) {
             System.out.println(egenMedlemID + " er et ugyldigt ID");

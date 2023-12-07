@@ -17,7 +17,6 @@ public class FilLæser {
             e.printStackTrace();
         }
     }
-
     private static void behandlData(ArrayList<Medlem> medlemmer, String line) {
         String[] del = line.split(",");
         if (del.length == 8) {
