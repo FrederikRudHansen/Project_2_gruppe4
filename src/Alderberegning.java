@@ -8,7 +8,7 @@ public class Alderberegning {
         return Period.between(fødselsdag, referenceDag).getYears();
     }
 
-    public static int beregnAlder() {
+    public static int beregnAlder() { //en metode så at personen kan give sin nøjagtig fødselsdag, så at person også bliver ældre.
         Scanner tast = new Scanner(System.in);
         DateTimeFormatter datoFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         int alder = 0; // Initialiser alder uden for try-blokken
@@ -23,6 +23,7 @@ public class Alderberegning {
                 LocalDate fødselsdag = LocalDate.parse(dato, datoFormatter);
                 System.out.println("\nFødseldag: " + fødselsdag.format(datoFormatter));
 
+                // det er en lille "loading" for at give programmet noget visuelt
                 String[] frames = {"Beregner alder: ⠋", "Beregner alder: ⠙", "Beregner alder: ⠹", "Beregner alder: ⠸", "Beregner alder: ⠼", "Beregner alder: ⠴", "Beregner alder: ⠦", "Beregner alder: ⠧", "Beregner alder: ⠇", "Beregner alder: ⠏"};
                 for (int i = 0; i < 50; i++) {
                     System.out.print("\r" + frames[i % frames.length]);
@@ -33,7 +34,7 @@ public class Alderberegning {
                 Thread.sleep(1000);
 
                 gyldig = true;
-            } catch (Exception e) {
+            } catch (Exception e) { // hvis nu at man skriver en dato der ikke er gyldig
                 System.out.println("\nUgyldig format. brug dd-mm-yyyy");
             }
         }

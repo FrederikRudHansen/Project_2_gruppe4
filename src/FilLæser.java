@@ -18,7 +18,7 @@ public class FilLæser {
             e.printStackTrace();
         }
     }
-   public static void behandlData(ArrayList<Medlem> medlemmer, String line) {
+   public static void behandlData(ArrayList<Medlem> medlemmer, String line) { //Behandler data til medlemmet. Så at LæsMedlemFil kan læse medlemmer.txt
         String[] del = line.split(",");
         if (del.length == 8) {
             String navn = del[0].trim();
@@ -28,7 +28,7 @@ public class FilLæser {
             int medlemID = Integer.parseInt(del[4].trim());
             String aktivitetsform = del[5].trim();
             int tlf = Integer.parseInt(del[6].trim());
-            int restance = Integer.parseInt(del[7].trim());
+            int restance = Integer.parseInt(del[7].trim()); //attributterne der indgår i medlemmer objekterne
 
             Medlem nyMedlem = new Medlem(navn, alder, aktivitetsform, tlf, køn, restance);
             nyMedlem.medlemID = medlemID;
@@ -38,8 +38,8 @@ public class FilLæser {
             System.out.println("Ugyldig data: " + line);
         }
     }
-    public static void behandlDataSvøm(ArrayList<Svømmer> svømmer, String line) {
-        String[] del = line.split(",");
+    public static void behandlDataSvøm(ArrayList<Svømmer> svømmer, String line) { // det samme hernede bare til svømmer hvor at LæsMedlemFilSvøm
+        String[] del = line.split(",");                                             // bruger metoden i stedet. Svømmer har nogle flere attributter
         if (del.length == 11) {
             String navn = del[0].trim();
             String køn = del[1].trim();
@@ -61,7 +61,7 @@ public class FilLæser {
             System.out.println("Ugyldig data: " + line);
         }
     }
-    public void LæsMedlemFilSvøm(ArrayList<Svømmer> svømmer) {
+    public void LæsMedlemFilSvøm(ArrayList<Svømmer> svømmer) { //metoden til at læse filen Svømmet.txt
         String fil = "Svømmer.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(fil))) {

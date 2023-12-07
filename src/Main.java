@@ -7,11 +7,12 @@ public class Main {
         filLæser.LæsMedlemFil(Medlem.medlemmer);
         filLæser.LæsMedlemFilSvøm(Svømmer.svømmer);
 
-        for (int i = 0; i <= 100; i++) {
+        for (int i = 0; i <= 100; i++) { //lille loading progress bar, der starter når programmet starter
             ProgressBar.showProgressBar(100,i);
             Thread.sleep(25);
         }
+        // Sout nedenunder her, viser når progress baren er færdig
         System.out.println("\u001B[2;30;40m\u001B[32mProgress: [==================================================] 100%\u001B[0m");
-        Menu.menu();
+        Menu.menu(); //her starter menuen
     }
 }

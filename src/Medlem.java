@@ -36,7 +36,7 @@ public class Medlem {
         }
     }
 
-    public void visRestance() {
+    public void visRestance() { // restance metode
         for (Medlem medlem : medlemmer) {
             System.out.println("Navn: " + medlem.navn);
             System.out.println("Restance " + medlem.restance);
@@ -44,7 +44,7 @@ public class Medlem {
         }
     }
 
-    public void opretMedlem() {
+    public void opretMedlem() { //start på opret medlem
         boolean aktivPassiv =true;
         System.out.println("\n Medlemmer ⇩\n");
         System.out.println("Indtast navn");
@@ -86,7 +86,7 @@ public class Medlem {
         } else {
             System.out.println("not a køn");
         }
-    }
+    } // slut på opret medlem
 
     public void setRestance(int nyRestance) {
         this.restance = nyRestance;
