@@ -11,7 +11,6 @@ public class Svømmer extends Medlem {
     public static ArrayList<Svømmer> svømmer = new ArrayList<>();
     public static ArrayList<Svømmer> top5svømmer = new ArrayList<Svømmer>();
     public static boolean fastsvømmerprettet = false;
-
     public double tid;
     public LocalDate dato;
     String stævne;
@@ -23,20 +22,16 @@ public class Svømmer extends Medlem {
             this.dato = dato;
             stævne = st;
         }
+
         Svømmer (){
             if (svømmer == null) {
                 svømmer = new ArrayList<>();
             }
-
     }
-
-
 
     public double gettid() {
             return this.tid;
     }
-
-
 
     public void top5svømmere() {
         Collections.sort(svømmer, Comparator.comparing(Svømmer::gettid));
@@ -84,7 +79,6 @@ public class Svømmer extends Medlem {
             int tlf = Integer.parseInt(tast.nextLine());
             Svømmer nySvømmer = new Svømmer(navn,alder,dp,tlf,køn,tid,dato,stævne,restance);
             svømmer.add(nySvømmer);
-
             Menu.menu();
         } else {
             System.out.println("not a køn stupid");

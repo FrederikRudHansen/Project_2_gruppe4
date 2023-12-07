@@ -53,8 +53,6 @@ public class FilLæser {
             LocalDate dato = LocalDate.parse(del[9].trim());
             String stævne = del[10].trim();
 
-
-
             Svømmer nySvømmer = new Svømmer(navn, alder, aktivitetsform, tlf, køn, tid, dato, stævne, restance);
             nySvømmer.medlemID = medlemID;
             nySvømmer.IdBogstav = idBogstav;

@@ -19,7 +19,6 @@ public class Medlem {
     String aktivitetsform;
     int restance;
     int tlf;
-    String filsti = "Medlemmer.txt";
 
     Medlem(String navn, int alder, String af, int tlf, String køn, int restance) {
         this.navn = navn;
@@ -112,6 +111,4 @@ public class Medlem {
     public String filGem(){
         return navn+","+køn+","+alder+","+IdBogstav+","+medlemID+","+aktivitetsform+","+tlf+","+restance;
     }
-
 }
-  
