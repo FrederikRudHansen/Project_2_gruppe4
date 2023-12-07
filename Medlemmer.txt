@@ -1,0 +1,4 @@
+Jens Hamilton,mand,21,M-,105,passiv,26223311,500
+Morten Peter,Mand,23,M-,106,aktiv,11223344,1600
+Bamse Kyllingsen,Kvinde,78,M-,107,aktiv,20346597,1200
+Wonder Woman,mand,723,M-,108,aktiv,98453828,1200

@@ -9,6 +9,7 @@ public class Menu  {
     static boolean run = true;
     static Svømmer svømmerslet = new Svømmer();
     static String filsti = "Medlemmer.txt";
+    static String filstisvøm = "Svømmer.txt";
 
     public static void menu() {
         while (run){
@@ -92,6 +93,13 @@ while (run){
                             }
                         }
                         case 4 -> {
+                            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filstisvøm,false))) { //GEMMER SVØMMERE I "Medlemmer.txt" FIL
+                                for (Svømmer s : Svømmer.svømmer) {
+                                    writer.write(s.filGemsvøm()+ "\n"); // MANGLER LOGIK TIL AT GEMME LISTEN
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                             try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti,false))) {
                                 for (Medlem m : Medlem.medlemmer) {
                                     writer.write(m.filGem() + "\n");

@@ -112,5 +112,6 @@ public class Medlem {
     public String filGem(){
         return navn+","+køn+","+alder+","+IdBogstav+","+medlemID+","+aktivitetsform+","+tlf+","+restance;
     }
+
 }
   

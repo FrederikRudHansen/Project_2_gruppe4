@@ -27,28 +27,16 @@ public class Svømmer extends Medlem {
             if (svømmer == null) {
                 svømmer = new ArrayList<>();
             }
-            fastsvømmer();
+
     }
+
+
 
     public double gettid() {
             return this.tid;
     }
 
-    public void fastsvømmer() {
-        if (fastsvømmerprettet == false) {
-            Svømmer NySvømmer1 = new Svømmer("Goku", 30, "Elite Svømmer", 12345678, "Mand", 4.10, LocalDate.of(2023,11,30), "langdistance",restance);
-            Svømmer NySvømmer2 = new Svømmer("Vegeta", 36, "Elite Svømmer", 10010001, "Mand", 4.30, LocalDate.of(2023,11,30), "langdistance",restance);
-            Svømmer NySvømmer3 = new Svømmer("Piccolo", 55, "Elite Svømmer", 66666666, "Mand", 6.05, LocalDate.of(2023,11,30), "langdistance",restance);
-            Svømmer NySvømmer4 = new Svømmer("Krillin", 29, "Elite Svømmer", 69696969, "Mand", 10.55, LocalDate.of(2023,11,30), "langdistance",restance);
-            Svømmer NySvømmer5 = new Svømmer("Tenshinhan", 31, "Elite Svømmer", 21212121, "Mand", 8.33, LocalDate.of(2023,11,30), "langdistance",restance);
-            svømmer.add(NySvømmer1);
-            svømmer.add(NySvømmer2);
-            svømmer.add(NySvømmer3);
-            svømmer.add(NySvømmer4);
-            svømmer.add(NySvømmer5);
-            fastsvømmerprettet = true;
-        }
-    }
+
 
     public void top5svømmere() {
         Collections.sort(svømmer, Comparator.comparing(Svømmer::gettid));
@@ -96,12 +84,7 @@ public class Svømmer extends Medlem {
             int tlf = Integer.parseInt(tast.nextLine());
             Svømmer nySvømmer = new Svømmer(navn,alder,dp,tlf,køn,tid,dato,stævne,restance);
             svømmer.add(nySvømmer);
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti))) { //GEMMER SVØMMERE I "Medlemmer.txt" FIL
-                writer.write(nySvømmer.toString()); // MANGLER LOGIK TIL AT GEMME LISTEN
-                writer.newLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
             Menu.menu();
         } else {
             System.out.println("not a køn stupid");
@@ -119,5 +102,8 @@ public class Svømmer extends Medlem {
             }
         }
         System.out.println("Medlem med ID " + medlemsID + " blev ikke fundet.");
+    }
+    public String filGemsvøm(){
+            return navn+","+køn+","+alder+","+idBogstav+","+medlemID+","+aktivitetsform+","+tlf+","+restance +","+ tid +","+ dato+","+stævne;
     }
 }
