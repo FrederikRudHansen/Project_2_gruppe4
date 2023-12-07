@@ -6,11 +6,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-public class Svømmer extends Medlem {
+public class Svømmer extends Medlem implements Comparable<Svømmer> {
 
     public static ArrayList<Svømmer> svømmer = new ArrayList<>();
-    public static ArrayList<Svømmer> top5svømmer = new ArrayList<Svømmer>();
-    public static boolean fastsvømmerprettet = false;
+    public static ArrayList<Svømmer> top5svømmer = new ArrayList<>();
     public double tid;
     public LocalDate dato;
     String stævne;
@@ -34,10 +33,10 @@ public class Svømmer extends Medlem {
     }
 
     public void top5svømmere() {
-        Collections.sort(svømmer, Comparator.comparing(Svømmer::gettid));
+        Collections.sort(svømmer);
         top5svømmer.clear();
-        top5svømmer.addAll(svømmer.subList(0,5));
-        }
+        top5svømmer.addAll(svømmer.subList(0, Math.min(5, svømmer.size())));
+    }
 
     @Override
     public String toString() {
@@ -100,4 +99,10 @@ public class Svømmer extends Medlem {
     public String filGemsvøm(){
             return navn+","+køn+","+alder+","+idBogstav+","+medlemID+","+aktivitetsform+","+tlf+","+restance +","+ tid +","+ dato+","+stævne;
     }
+
+    public int compareTo(Svømmer other) {
+        // Sammenlign svømmere baseret på tid
+        return Double.compare(this.tid, other.tid);
+    }
+
 }

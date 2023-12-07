@@ -79,7 +79,7 @@ while (run){
                                 case 2:
                                     Svømmer tid = new Svømmer();
                                     tid.top5svømmere();
-                                    System.out.println(Svømmer.top5svømmer);
+                                    System.out.println(Svømmer.svømmer);
                                     break;
                                 case 3:
                                     Svømmer svømmer1 = new Svømmer();
