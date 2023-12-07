@@ -49,25 +49,7 @@ public class Medlem {
         }
     }
 
-    public void fastmedlem() {
-        if (fastmedlemoprettet == false) {
 
-
-
-            Medlem nyMedlem1 = new Medlem("Mikkel Felps", 43, "Langdistance", 82746612, "Mand",1600);
-            Medlem nyMedlem2 = new Medlem("Karen Karensen", 32, "Crawl", 72846285, "Kvinde",1600);
-            Medlem nyMedlem3 = new Medlem("Ole Jensen", 67, "Fri Svømning", 42758344, "Mand",1200);
-            Medlem nyMedlem4 = new Medlem("Michelle Jørgensen", 24, "Fri Svømning", 42735573, "Kvinde",1600);
-            Medlem nyMedlem5 = new Medlem("Nicklas Jørgensen", 9, "Børnepool", 42735573, "Mand",1000);
-            medlemmer.add(nyMedlem1);
-            medlemmer.add(nyMedlem2);
-            medlemmer.add(nyMedlem3);
-            medlemmer.add(nyMedlem4);
-            medlemmer.add(nyMedlem5);
-            fastmedlemoprettet = true;
-
-        }
-    }
 
     public void opretMedlem() {
         boolean aktivPassiv =true;
@@ -111,12 +93,7 @@ public class Medlem {
 
             Medlem nyMedlem = new Medlem(navn, alder, af, tlf, køn, restance);
             medlemmer.add(nyMedlem);
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti))) { //GEMMER MEDLEMMER I "Medlemmer.txt" FIL
-                writer.write(nyMedlem.toString());
-                writer.newLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
             Menu.menu();
         } else {
             System.out.println("not a køn");
@@ -167,6 +144,10 @@ public class Medlem {
     @Override
     public String toString() {
         return "Medlem: " + navn + ", " + køn + ", " + alder + "\n\nMedlems ID: " + IdBogstav+ medlemID + "\n\nAktivitetsform: " + aktivitetsform + "\n\nTelefon: +45" + tlf + "\n\nRestance: " + restance + "\n_____________________\n";
+    }
+
+    public String filGem(){
+        return navn+","+køn+","+alder+","+IdBogstav+","+medlemID+","+aktivitetsform+","+tlf+","+restance;
     }
 
 

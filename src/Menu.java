@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 public class Menu  {
     static BetalingSystem betalingSystem = new BetalingSystem(0,0);
@@ -5,12 +8,14 @@ public class Menu  {
     static Medlem medlem = new Medlem();
     static boolean run = true;
     static Svømmer svømmerslet = new Svømmer();
+    static Medlem nyMedlem = new Medlem();
+    static String filsti = "Medlemmer.txt";
 
     public static void menu() {
 
         while (run){
             try {
-                medlem.fastmedlem();
+
 
 
 while (run){
@@ -104,14 +109,22 @@ while (run){
                             }
                         }
                         case 4 -> {
+                            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filsti,false))) {
+                                for (Medlem m : Medlem.medlemmer) {
+                                    writer.write(m.filGem() + "\n");
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                             run = false;
 
-                            break;
+
                         }
                     }
                 }
 
             } catch(Exception e){
+
                 System.out.println("Ugyldig input");
                 tastaturMenu.nextLine();
             }
